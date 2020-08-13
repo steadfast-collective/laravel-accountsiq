@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\SalesOrderRepository as ContractsSa
 
 class SalesOrderRepository implements ContractsSalesOrderRepository
 {
-    //
+    public function getNewSalesOrder(string $customerCode)
+    {
+        //
+    }
 }

@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\PostPurchaseInvoiceRepository as Co
 
 class PostPurchaseInvoiceRepository implements ContractsPostPurchaseInvoiceRepository
 {
-    //
+    public function postInvoice(int $invoiceId)
+    {
+        //
+    }
 }

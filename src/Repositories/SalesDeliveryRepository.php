@@ -6,5 +6,13 @@ use SteadfastCollective\AccountsIQ\Contracts\SalesDeliveryRepository as Contract
 
 class SalesDeliveryRepository implements ContractsSalesDeliveryRepository
 {
-    //
+    public function getDeliveryRouteList()
+    {
+        //
+    }
+
+    public function getNewDeliveryLine($line)
+    {
+        //
+    }
 }

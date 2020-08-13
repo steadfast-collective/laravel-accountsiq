@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerJournalRepository as C
 
 class GeneralLedgerJournalRepository implements ContractsGeneralLedgerJournalRepository
 {
-    //
+    public function createGeneralJournal(string $journal)
+    {
+        //
+    }
 }

@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\DepartmentRepository as ContractsDe
 
 class DepartmentRepository implements ContractsDepartmentRepository
 {
-    //
+    public function getDepartmentList()
+    {
+        //
+    }
 }

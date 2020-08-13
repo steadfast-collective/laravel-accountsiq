@@ -6,5 +6,18 @@ use SteadfastCollective\AccountsIQ\Contracts\CustomerRepository as ContractsCust
 
 class CustomerRepository implements ContractsCustomerRepository
 {
-    //
+    public function getCustomer(string $customerCode)
+    {
+        //
+    }
+
+    public function getNewCustomerFromDefaults(string $customerCode)
+    {
+        //
+    }
+
+    public function update($customer, bool $create)
+    {
+        //
+    }
 }

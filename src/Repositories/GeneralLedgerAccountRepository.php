@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerAccountRepository as C
 
 class GeneralLedgerAccountRepository implements ContractsGeneralLedgerAccountRepository
 {
-    //
+    public function getGLAccountList()
+    {
+        //
+    }
 }

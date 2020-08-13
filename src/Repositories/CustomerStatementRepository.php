@@ -6,5 +6,8 @@ use SteadfastCollective\AccountsIQ\Contracts\CustomerStatementRepository as Cont
 
 class CustomerStatementRepository implements ContractsCustomerStatementRepository
 {
-    //
+    public function getCustomersStatement($upTo, array $customerCodes, bool $showZeros)
+    {
+        //
+    }
 }

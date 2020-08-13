@@ -6,5 +6,13 @@ use SteadfastCollective\AccountsIQ\Contracts\SalesReceiptRepository as Contracts
 
 class SalesReceiptRepository implements ContractsSalesReceiptRepository
 {
-    //
+    public function saveSalesReceipt($salesReceipt)
+    {
+        //
+    }
+
+    public function saveSalesReceiptGetBackTransactionID($salesReceipt)
+    {
+        //
+    }
 }

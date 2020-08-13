@@ -6,5 +6,23 @@ use SteadfastCollective\AccountsIQ\Contracts\PostSalesInvoiceRepository as Contr
 
 class PostSalesInvoiceRepository implements ContractsPostSalesInvoiceRepository
 {
-    //
+    public function createBatchSalesInvoice($invoice)
+    {
+        //
+    }
+
+    public function getNewBatchSalesInvoice(string $customerCode)
+    {
+        //
+    }
+
+    public function getNewSalesInvoice(string $customerCode)
+    {
+        //
+    }
+
+    public function postPayAndAllocateSalesInvoice($query)
+    {
+        //
+    }
 }
