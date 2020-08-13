@@ -4,7 +4,7 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface CustomerRepository
 {
-    public function get();
-    public function getFromDefaults();
-    public function update();
+    public function getCustomer(string $customerCode);
+    public function getNewCustomerFromDefaults(string $customerCode);
+    public function update($customer, bool $create);
 }

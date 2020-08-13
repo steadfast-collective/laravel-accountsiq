@@ -4,6 +4,6 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface SalesDeliveryRepository
 {
-    public function deliveryOrderLines();
-    public function get();
+    public function getDeliveryRouteList();
+    public function getNewDeliveryLine($line);
 }

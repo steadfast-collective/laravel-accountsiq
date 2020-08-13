@@ -4,9 +4,8 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface PostSalesInvoiceRepository
 {
-    public function getNew();
-    public function getBatch();
-    public function store();
-    public function storeBatch();
-    public function postInvoice();
+    public function createBatchSalesInvoice($invoice);
+    public function getNewBatchSalesInvoice(string $customerCode);
+    public function getNewSalesInvoice(string $customerCode);
+    public function postPayAndAllocateSalesInvoice($query);
 }

@@ -4,6 +4,6 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface SalesReceiptRepository
 {
-    public function store();
-    public function allocateTransactions();
+    public function saveSalesReceipt($salesReceipt);
+    public function saveSalesReceiptGetBackTransactionID($salesReceipt);
 }

@@ -4,5 +4,5 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface GeneralLedgerJournalRepository
 {
-    public function store();
+    public function createGeneralJournal(string $journal);
 }

@@ -4,5 +4,5 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface GeneralLedgerAccountRepository
 {
-    public function get();
+    public function getGLAccountList();
 }
