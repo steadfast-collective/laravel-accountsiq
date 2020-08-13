@@ -1,10 +1,10 @@
 <?php
 
-namespace SteadfastCollective\Vesta;
+namespace SteadfastCollective\AccountsIQ;
 
 use Illuminate\Support\ServiceProvider;
 
-class VestaServiceProvider extends ServiceProvider
+class AccountsIQServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -13,7 +13,7 @@ class VestaServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/vesta.php' => config_path('vesta.php'),
+                __DIR__.'/../config/accountsiq.php' => config_path('accountsiq.php'),
             ], 'config');
 
             // $this->loadViewsFrom(__DIR__.'/../resources/views', 'vesta');
@@ -29,6 +29,6 @@ class VestaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/vesta.php', 'vesta');
+        $this->mergeConfigFrom(__DIR__.'/../config/accountsiq.php', 'vesta');
     }
 }

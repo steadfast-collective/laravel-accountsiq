@@ -1,33 +1,23 @@
-# Vesta PHP
+# Laravel AccountsIQ
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/vesta-php.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/vesta-php)
-[![Build Status](https://img.shields.io/travis/steadfastcollective/vesta-php/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/vesta-php)
-[![Quality Score](https://img.shields.io/scrutinizer/g/steadfastcollective/vesta-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/steadfastcollective/vesta-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/steadfastcollective/vesta-php.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/vesta-php)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/laravel-accountsiq.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-accountsiq)
+[![Build Status](https://img.shields.io/travis/steadfastcollective/laravel-accountsiq/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/laravel-accountsiq)
+[![Quality Score](https://img.shields.io/scrutinizer/g/steadfastcollective/laravel-accountsiq.svg?style=flat-square)](https://scrutinizer-ci.com/g/steadfastcollective/laravel-accountsiq)
+[![Total Downloads](https://img.shields.io/packagist/dt/steadfastcollective/laravel-accountsiq.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-accountsiq)
 
-Vesta-php is a php package to help make calls to a Vesta Control Panel API.
+Package to talk to AccountIQ in Laravel.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require steadfastcollective/vesta-php
+composer require steadfastcollective/laravel-accountsiq
 ```
 
 ## Usage
 
-``` php
-use SteadfastCollective\Vesta\Vesta;
-
-$response = (new Vesta($ip, $username, $password, $port))
-    ->request([
-        'cmd' => 'v-add-user',
-        'arg1' => 'example-username',
-        'arg2' => 'example-password',
-        'arg3' => 'example@example.com',
-    ]);
-```
+TODO
 
 ### Testing
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace SteadfastCollective\Vesta;
+namespace SteadfastCollective\AccountsIQ;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \SteadfastCollective\Vesta\Vesta
+ * @see \SteadfastCollective\AccountsIQ\AccountsIQ
  */
-class VestaFacade extends Facade
+class AccountsIQFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class VestaFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'vesta';
+        return 'AccountsIQ';
     }
 }

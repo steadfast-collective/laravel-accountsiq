@@ -1,6 +1,6 @@
 <?php
 
-namespace SteadfastCollective\Vesta\Tests;
+namespace SteadfastCollective\AccountsIQ\Tests;
 
 use PHPUnit\Framework\TestCase;
 

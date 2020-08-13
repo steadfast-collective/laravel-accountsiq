@@ -1,11 +1,11 @@
 {
-    "name": "steadfastcollective/vesta-php",
-    "description": "Vesta-php is a php package to help make calls to a Vesta Control Panel API.",
+    "name": "steadfastcollective/laravel-accountsiq",
+    "description": "",
     "keywords": [
         "steadfastcollective",
-        "vesta"
+        "accountsiq"
     ],
-    "homepage": "https://github.com/steadfastcollective/vesta",
+    "homepage": "https://github.com/steadfastcollective/laravel-accountsiq",
     "license": "MIT",
     "authors": [
         {
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SteadfastCollective\\Vesta\\": "src"
+            "SteadfastCollective\\AccountsIQ\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SteadfastCollective\\Vesta\\Tests\\": "tests"
+            "SteadfastCollective\\AccountsIQ\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,10 +44,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SteadfastCollective\\Vesta\\VestaServiceProvider"
+                "SteadfastCollective\\AccountsIQ\\AccountsIQServiceProvider"
             ],
             "aliases": {
-                "Vesta": "SteadfastCollective\\Vesta\\VestaFacade"
+                "AccountsIQ": "SteadfastCollective\\AccountsIQ\\AccountsIQFacade"
             }
         }
     }

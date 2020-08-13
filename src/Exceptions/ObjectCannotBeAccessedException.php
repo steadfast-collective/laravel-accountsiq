@@ -1,6 +1,6 @@
 <?php
 
-namespace SteadfastCollective\Vesta\Exceptions;
+namespace SteadfastCollective\AccountsIQ\Exceptions;
 
 use Exception;
 
