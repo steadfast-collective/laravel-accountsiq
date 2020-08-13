@@ -1,0 +1,54 @@
+{
+    "name": "steadfastcollective/vesta-php",
+    "description": "Vesta-php is a php package to help make calls to a Vesta Control Panel API.",
+    "keywords": [
+        "steadfastcollective",
+        "vesta"
+    ],
+    "homepage": "https://github.com/steadfastcollective/vesta",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steadfast Collective",
+            "email": "dev@steadfastcollective.com",
+            "homepage": "https://steadfastcollective.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SteadfastCollective\\Vesta\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SteadfastCollective\\Vesta\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SteadfastCollective\\Vesta\\VestaServiceProvider"
+            ],
+            "aliases": {
+                "Vesta": "SteadfastCollective\\Vesta\\VestaFacade"
+            }
+        }
+    }
+}
