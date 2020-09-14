@@ -1,5 +1,15 @@
 <?php
 
 return [
-    'key' => env('ACCOUNTS_IQ_API_KEY'),
+
+    'accounts' => [
+
+        [
+            'company_id' => '',
+            'partner_key' => '',
+            'user_key' => '',
+        ],
+
+    ],
+
 ];
