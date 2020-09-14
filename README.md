@@ -17,7 +17,11 @@ composer require steadfastcollective/laravel-accountsiq
 
 ## Usage
 
-TODO
+After you have added your API credentials to your `config/accountsiq.php` file, you should be able to fetch data like this:
+
+```php
+return (new \SteadfastCollective\AccountsIQ\Repositories\DepartmentRepository())->getDepartmentList();
+```
 
 ### Testing
 
