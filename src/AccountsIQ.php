@@ -2,6 +2,7 @@
 
 namespace SteadfastCollective\AccountsIQ;
 
+use Illuminate\Support\Facades\Cache;
 use SoapClient;
 
 class AccountsIQ
@@ -21,17 +22,24 @@ class AccountsIQ
 
     protected function obtainToken()
     {
-        // TODO: maybe add some caching to make sure we are not requesting a new token for every single request
+        $account = config('accountsiq.accounts')[config('accountsiq.account')];
+        $cacheKey = 'accountsiq.'.$account['company_id'];
+
+        if (Cache::has($cacheKey)) {
+            return Cache::get($cacheKey);
+        }
+
         $client = new SoapClient($this->wsdlUrl, $this->getParams());
 
-        // TODO: allow for user to pass in the key of the account they want to fetch details of
-        $account = config('accountsiq.accounts')[0];
-
-        return $client->Login([
+        $token = $client->Login([
             'companyID'  => $account['company_id'],
             'partnerKey' => $account['partner_key'],
             'userKey'    => $account['user_key'],
         ])->LoginResult;
+
+        Cache::put($cacheKey, $token, 20 * 60);
+
+        return $token;
     }
 
     protected function getParams(): array
