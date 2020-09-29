@@ -4,6 +4,7 @@ namespace SteadfastCollective\AccountsIQ;
 
 use Illuminate\Support\Facades\Cache;
 use SoapClient;
+use SoapFault;
 
 class AccountsIQ
 {
@@ -11,13 +12,17 @@ class AccountsIQ
 
     public function request(string $function, array $params = [])
     {
-        $client = new SoapClient($this->wsdlUrl, $this->getParams());
+        try {
+            $client = new SoapClient($this->wsdlUrl, $this->getParams());
 
-        $params['token'] = $this->obtainToken();
+            $params['token'] = $this->obtainToken();
 
-        $response = $client->{$function}($params);
+            $response = $client->{$function}($params);
 
-        return json_decode(json_encode($response), true);
+            return json_decode(json_encode($response), true);
+        } catch (SoapFault $fault) {
+            throw new Exceptions\RequestException($fault->faultname.': '.$fault->faultstring);
+        }
     }
 
     protected function obtainToken()
