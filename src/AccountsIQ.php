@@ -21,7 +21,7 @@ class AccountsIQ
 
             return json_decode(json_encode($response), true);
         } catch (SoapFault $fault) {
-            throw new Exceptions\RequestException($fault->faultname.': '.$fault->faultstring);
+            throw new Exceptions\RequestException($fault->getMessage());
         }
     }
 
