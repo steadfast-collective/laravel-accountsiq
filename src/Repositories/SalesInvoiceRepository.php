@@ -14,7 +14,7 @@ class SalesInvoiceRepository implements Contract
 
         if (isset($request['CreateBatchSalesInvoiceBulkGetBackTransactionIDsResult']['Result']['WSResultStatus'])) {
             foreach ($request['CreateBatchSalesInvoiceBulkGetBackTransactionIDsResult']['Result']['WSResultStatus'] as $key => $result) {
-                if ($result['Status'] === 'Failure') {
+                if (isset($request['status']) && $result['Status'] === 'Failure') {
                     throw new ResponseException("[$key] ".$result['ErrorCode'].' - '.$result['ErrorMessage']);
                 }
             }
