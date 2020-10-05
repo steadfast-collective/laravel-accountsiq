@@ -2,25 +2,18 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\AccountsIQ;
-use SteadfastCollective\AccountsIQ\Contracts\SalesOrderRepository as ContractsSalesOrderRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\SalesOrderRepository as Contract;
 
-class SalesOrderRepository implements ContractsSalesOrderRepository
+class SalesOrderRepository implements Contract
 {
-    public $accountsIQ;
-
-    public function __construct()
+    public function getNewSalesOrder(array $data = []): array
     {
-        $this->accountsIQ = new AccountsIQ();
+        return AccountsIQFacade::request('GetNewSalesOrder', $data);
     }
 
-    public function getNewSalesOrder(array $params = [])
+    public function saveOrder(array $data = []): array
     {
-        return $this->accountsIQ->request('GetNewSalesOrder', $params);
-    }
-
-    public function saveOrder(array $params = [])
-    {
-        return $this->accountsIQ->request('SaveOrder', $params);
+        return AccountsIQFacade::request('SaveOrder', $data);
     }
 }

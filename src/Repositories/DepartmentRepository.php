@@ -2,20 +2,13 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\AccountsIQ;
-use SteadfastCollective\AccountsIQ\Contracts\DepartmentRepository as ContractsDepartmentRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\DepartmentRepository as Contract;
 
-class DepartmentRepository implements ContractsDepartmentRepository
+class DepartmentRepository implements Contract
 {
-    public $accountsIQ;
-
-    public function __construct()
+    public function getDepartmentList(): array
     {
-        $this->accountsIQ = new AccountsIQ();
-    }
-
-    public function getDepartmentList()
-    {
-        return $this->accountsIQ->request('GetDepartmentList');
+        return AccountsIQFacade::request('GetDepartmentList');
     }
 }

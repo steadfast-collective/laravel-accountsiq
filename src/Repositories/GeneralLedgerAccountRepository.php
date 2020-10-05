@@ -2,12 +2,13 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerAccountRepository as ContractsGeneralLedgerAccountRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerAccountRepository as Contract;
 
-class GeneralLedgerAccountRepository implements ContractsGeneralLedgerAccountRepository
+class GeneralLedgerAccountRepository implements Contract
 {
-    public function getGLAccountList()
+    public function getGLAccountList(): array
     {
-        //
+        return AccountsIQFacade::request('GetGLAccountList');
     }
 }

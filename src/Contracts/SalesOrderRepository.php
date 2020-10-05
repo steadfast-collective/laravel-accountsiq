@@ -4,7 +4,7 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface SalesOrderRepository
 {
-    public function getNewSalesOrder(array $params = []);
+    public function getNewSalesOrder(array $data = []): array;
 
-    public function saveOrder(array $params = []);
+    public function saveOrder(array $data = []): array;
 }

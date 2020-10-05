@@ -4,5 +4,5 @@ namespace SteadfastCollective\AccountsIQ\Contracts;
 
 interface DepartmentRepository
 {
-    public function getDepartmentList();
+    public function getDepartmentList(): array;
 }

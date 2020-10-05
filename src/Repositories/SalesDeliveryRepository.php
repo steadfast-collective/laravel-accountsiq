@@ -2,17 +2,17 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\Contracts\SalesDeliveryRepository as ContractsSalesDeliveryRepository;
+use SteadfastCollective\AccountsIQ\Contracts\SalesDeliveryRepository as Contract;
 
-class SalesDeliveryRepository implements ContractsSalesDeliveryRepository
+class SalesDeliveryRepository implements Contract
 {
-    public function getDeliveryRouteList()
+    public function getDeliveryRouteList(): array
     {
-        //
+        // TODO
     }
 
-    public function getNewDeliveryLine($line)
+    public function getNewDeliveryLine($line): array
     {
-        //
+        // TODO
     }
 }

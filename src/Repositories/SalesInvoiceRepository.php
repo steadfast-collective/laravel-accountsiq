@@ -2,22 +2,15 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\AccountsIQ;
-use SteadfastCollective\AccountsIQ\Contracts\SalesInvoiceRepository as ContractsSalesInvoiceRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\SalesInvoiceRepository as Contract;
 use SteadfastCollective\AccountsIQ\Exceptions\ResponseException;
 
-class SalesInvoiceRepository implements ContractsSalesInvoiceRepository
+class SalesInvoiceRepository implements Contract
 {
-    public $accountsIQ;
-
-    public function __construct()
+    public function createBatchSalesInvoiceBulkGetBackTransactionIDs(array $params): array
     {
-        $this->accountsIQ = new AccountsIQ();
-    }
-
-    public function createBatchSalesInvoiceBulkGetBackTransactionIDs(array $params)
-    {
-        $request = $this->accountsIQ->request('CreateBatchSalesInvoiceBulkGetBackTransactionIDs', $params);
+        $request = AccountsIQFacade::request('CreateBatchSalesInvoiceBulkGetBackTransactionIDs', $params);
 
         if (isset($request['CreateBatchSalesInvoiceBulkGetBackTransactionIDsResult']['Result']['WSResultStatus'])) {
             foreach ($request['CreateBatchSalesInvoiceBulkGetBackTransactionIDsResult']['Result']['WSResultStatus'] as $key => $result) {

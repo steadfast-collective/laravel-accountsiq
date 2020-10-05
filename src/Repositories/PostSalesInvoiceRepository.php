@@ -2,45 +2,42 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\AccountsIQ;
-use SteadfastCollective\AccountsIQ\Contracts\PostSalesInvoiceRepository as ContractsPostSalesInvoiceRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\PostSalesInvoiceRepository as Contract;
 
-class PostSalesInvoiceRepository implements ContractsPostSalesInvoiceRepository
+class PostSalesInvoiceRepository implements Contract
 {
-    public $accountsIQ;
-
-    public function __construct()
+    public function createBatchSalesInvoice($invoice): array
     {
-        $this->accountsIQ = new AccountsIQ();
+        return AccountsIQFacade::request('CreateBatchSalesInvoice', $invoice);
     }
 
-    public function createBatchSalesInvoice($invoice)
+    public function getNewBatchSalesInvoice(string $customerCode): array
     {
-        //
+        return AccountsIQFacade::request('GetNewBatchSalesInvoice', [
+            'customerCode' => $customerCode,
+        ]);
     }
 
-    public function getNewBatchSalesInvoice(string $customerCode)
+    public function getNewSalesInvoice(string $customerCode): array
     {
-        //
+        return AccountsIQFacade::request('GetNewSalesInvoice', [
+            'customerCode' => $customerCode,
+        ]);
     }
 
-    public function getNewSalesInvoice(string $customerCode)
+    public function postPayAndAllocateSalesInvoice($query): array
     {
-        //
+        return AccountsIQFacade::request('PostPayAndAllocateSalesInvoice', $query);
     }
 
-    public function postPayAndAllocateSalesInvoice($query)
+    public function saveInvoice(array $data = []): array
     {
-        //
+        return AccountsIQFacade::request('SaveInvoice', $data);
     }
 
-    public function saveInvoice(array $params = [])
+    public function saveInvoiceGetBackInvoiceID(array $data = []): array
     {
-        return $this->accountsIQ->request('SaveInvoice', $params);
-    }
-
-    public function saveInvoiceGetBackInvoiceID(array $params = [])
-    {
-        return $this->accountsIQ->request('SaveInvoiceGetBackInvoiceID', $params);
+        return AccountsIQFacade::request('SaveInvoiceGetBackInvoiceID', $data);
     }
 }

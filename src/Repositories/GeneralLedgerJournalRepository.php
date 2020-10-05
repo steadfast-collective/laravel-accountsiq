@@ -2,12 +2,13 @@
 
 namespace SteadfastCollective\AccountsIQ\Repositories;
 
-use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerJournalRepository as ContractsGeneralLedgerJournalRepository;
+use SteadfastCollective\AccountsIQ\AccountsIQFacade;
+use SteadfastCollective\AccountsIQ\Contracts\GeneralLedgerJournalRepository as Contract;
 
-class GeneralLedgerJournalRepository implements ContractsGeneralLedgerJournalRepository
+class GeneralLedgerJournalRepository implements Contract
 {
-    public function createGeneralJournal(string $journal)
+    public function createGeneralJournal(array $data): array
     {
-        //
+        return AccountsIQFacade::request('CreateGeneralJournal', $data);
     }
 }

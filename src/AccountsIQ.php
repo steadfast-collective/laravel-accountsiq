@@ -3,6 +3,7 @@
 namespace SteadfastCollective\AccountsIQ;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 use SoapClient;
 use SoapFault;
 
@@ -27,7 +28,7 @@ class AccountsIQ
 
     protected function obtainToken()
     {
-        $account = config('accountsiq.accounts')[config('accountsiq.account')];
+        $account = Config::get('accountsiq.accounts')[Config::get('accountsiq.account')];
         $cacheKey = 'accountsiq.'.$account['company_id'];
 
         if (Cache::has($cacheKey)) {
