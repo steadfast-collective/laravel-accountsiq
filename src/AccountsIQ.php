@@ -13,6 +13,10 @@ class AccountsIQ
 
     public function request(string $function, array $params = [])
     {
+        if (Config::get('accountsiq.disabled') === true) {
+            throw new Exceptions\DisabledException('The AccountsIQ API is currently disabled. To make requests, please re-enable it in your configuration file.');
+        }
+
         try {
             $client = new SoapClient($this->wsdlUrl, $this->getParams());
 
