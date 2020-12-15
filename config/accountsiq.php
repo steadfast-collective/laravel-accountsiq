@@ -13,4 +13,8 @@ return [
         ],
     ],
 
+    'logging' => [
+        \SteadfastCollective\AccountsIQ\Logging\InfoLog::class,
+    ],
+
 ];

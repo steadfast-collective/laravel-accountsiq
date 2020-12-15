@@ -24,6 +24,14 @@ class AccountsIQ
 
             $response = $client->{$function}($params);
 
+            foreach (config('accountsiq.logging') as $logger) {
+                (new $logger())->log('AccountsIQ API Request', [
+                    'wdsl' => $this->wsdlUrl,
+                    'params' => json_encode($this->getParams()),
+                    'account' => Config::get('accountsiq.account'),
+                ]);
+            }
+
             return json_decode(json_encode($response), true);
         } catch (SoapFault $fault) {
             throw new Exceptions\RequestException($fault->getMessage());
