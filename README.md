@@ -1,5 +1,7 @@
 # Laravel AccountsIQ
 
+**Still in development.**
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/laravel-accountsiq.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-accountsiq)
 [![Build Status](https://img.shields.io/travis/steadfastcollective/laravel-accountsiq/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/laravel-accountsiq)
 [![Quality Score](https://img.shields.io/scrutinizer/g/steadfastcollective/laravel-accountsiq.svg?style=flat-square)](https://scrutinizer-ci.com/g/steadfastcollective/laravel-accountsiq)
