@@ -26,10 +26,11 @@ class AccountsIQ
 
             foreach (config('accountsiq.logging') as $logger) {
                 (new $logger())->log('AccountsIQ API Request', [
-                    'wdsl' => $this->wsdlUrl,
-                    'account' => Config::get('accountsiq.account'),
-                    'params' => json_encode($this->getParams()),
-                    'response' => json_encode($response),
+                    'wdsl'      => $this->wsdlUrl,
+                    'account'   => Config::get('accountsiq.account'),
+                    'params'    => json_encode($this->getParams()),
+                    'response'  => json_encode($response),
+                    'params'    => json_encode($params),
                 ]);
             }
 
